@@ -37,8 +37,8 @@ class GetRsnViewHelper extends AbstractViewHelper
         RenderingContextInterface $renderingContext
     ) {
         if ($arguments['rsns']) {
-            foreach ($arguments['rsns'] as $rsn) {
-                if (preg_match('/^.*'.$arguments['isil'].'.?(.*?)$/', $rsn, $matches) === 1) {
+            foreach ($arguments['rsns'] as $rsn_id_str_mv) {
+                if (preg_match('/^.*'.$arguments['isil'].'.?(.*?)$/', $rsn_id_str_mv, $matches) === 1) {
                     return $matches[1];
                 }
             }
